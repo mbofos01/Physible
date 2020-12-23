@@ -74,10 +74,11 @@ if sys.version_info[0] >= 3:
 else:
     import PySimpleGUI27 as sg
 
-layout = [  [sg.Text('Enter plots name:   '), sg.InputText()],
-            [sg.Text('Enter Axis X name: '), sg.InputText()],
-            [sg.Text('Enter Axis Y name: '), sg.InputText()],
-            [sg.Text('Enter b value:       '), sg.InputText()],
+layout = [  [sg.Text('Enter plots name:         '),sg.InputText()],
+            [sg.Text('Enter Axis X name:       '), sg.InputText()],
+            [sg.Text('Enter Axis Y name:      '), sg.InputText()],
+            [sg.Text('Enter b value:               '), sg.InputText()],
+            [sg.Text('Enter max x-axis value: '), sg.InputText()],
             [sg.Button('Create Plot')],[sg.Button('Close Window')]
            ]
 # Create the Window
@@ -89,10 +90,7 @@ while True:
     event, values = window.read()
     if event in (None, 'Close Window'): # if user closes window or clicks cancel
         break
-    print('You entered in the textbox: '+values[0])
-    print('You entered in the textbox: '+values[1])
-    print('You entered in the textbox: '+values[2])
-    print('You entered in the textbox: '+values[3])
+
     if event in (None,'Create Plot'):
         win2_active = True
         layout2 = [
@@ -100,8 +98,8 @@ while True:
             [sg.Input(do_not_clear=True, key='_IN_')],
             [sg.Button('Show'), sg.Button('Exit')]
                 ]
-        t1 = np.arange(0.0, 5.0, 0.1)
-        t2 = np.arange(0.0, 50.0, 0.002)
+
+        t2 = np.arange(0.0, check(values[4]), 0.002)
         fig = plt.figure()
         b = check(values[3])
         plt.Axes.set_frame_on

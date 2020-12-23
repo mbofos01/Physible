@@ -1,10 +1,9 @@
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy import interpolate
-from scipy.interpolate import interp1d
-import PySimpleGUI as sg
-
+import math
+from matplotlib import cm
+from mpl_toolkits.mplot3d import Axes3D
 def checkP(s):
     print("run check p")
     k = 2222222222222222222
@@ -72,63 +71,56 @@ def check(s):
         return flag
     return float(s)
 
-X = []
-Y = []
-
-def addPoint(x1,A):
-    A.append(float(x1))
-    print(A)
 if sys.version_info[0] >= 3:
     import PySimpleGUI as sg
 else:
     import PySimpleGUI27 as sg
-layout = [  [sg.Text('Enter plots name:   '), sg.InputText()],
-            [sg.Text('Enter Axis X name: '), sg.InputText()],
-            [sg.Text('Enter Axis Y name: '), sg.InputText()],
-            [sg.Button('Add a Point')],
+
+layout = [  [sg.Text('Enter plots name:         '),sg.InputText()],
+            [sg.Text('Enter Axis X name:       '), sg.InputText()],
+            [sg.Text('Enter Axis Y name:      '), sg.InputText()],
+            [sg.Text('Enter A value:               '), sg.InputText()],
+            [sg.Text('Enter t value:               '), sg.InputText()],
+            [sg.Text('Enter T value:               '), sg.InputText()],
+            [sg.Text('Enter x value:               '), sg.InputText()],
+            [sg.Text('Enter λ value:               '), sg.InputText()],
+            [sg.Text('Enter f value:               '), sg.InputText()],
+            [sg.Text('Enter max x      value: '), sg.InputText()],
+            [sg.Text('Enter max t      value: '), sg.InputText()],
             [sg.Button('Create Plot')],[sg.Button('Close Window')]
            ]
 # Create the Window
-window = sg.Window('Degressive Oscillation', layout).Finalize()
+window = sg.Window('Harmonic Wave', layout).Finalize()
 #window.Maximize()
 # Event Loop to process "events" and get the "values" of the inputs
+win2_active = False
 while True:
     event, values = window.read()
     if event in (None, 'Close Window'): # if user closes window or clicks cancel
         break
 
-    if event in (None,'Add a Point'):
-        layout = [
-        [sg.Text('Enter x cord: '), sg.InputText()],
-        [sg.Text('Enter y cord: '), sg.InputText()],
-        [sg.Button('Ok', key=addPoint), sg.Button('Cancel')]]
-
-        pop = sg.Window('Add a Point', layout).Finalize()
-        pop.BringToFront()
-        while True:
-            action, times = pop.read()
-            if callable(action):
-                addPoint(times[0],X)
-                addPoint(times[1],Y)
-                break
-            if action in (None, 'Cancel'):
-                break
-        pop.close()
-
     if event in (None,'Create Plot'):
-        x = np.array(X)
-        y = np.array(Y)
-        # y = 2x
-        plt.ylabel((values[2]))
-        plt.xlabel((values[1]))
-        plt.grid(True)
-        plt.title((values[0]))
-        m, b = np.polyfit(X, Y, 1)
-        xnew = np.linspace(0, 10, num=41, endpoint=True)
-        plt.plot(X, Y, 'o')
-        plt.plot(x, m*x + b,'--')
-        plt.legend(['Πειραματικά Σημεία', 'Βέλτιστη ευθεία'], loc='best')
+        win2_active = True
+        layout2 = [
+            [sg.Text('The second window'), sg.Text('', key='_OUTPUT_')],
+            [sg.Input(do_not_clear=True, key='_IN_')],
+            [sg.Button('Show'), sg.Button('Exit')]
+            ]
+
+        l = 0.6
+        T = 1.5
+        A = 1
+        maxx = 100
+        maxt = 51
+        X = list(np.linspace(0, maxx, maxx))
+        t = list(np.linspace(0, maxt, maxt))
+        X, t = np.meshgrid(X, t)
+        Z = A * np.sin(2*np.pi*(t/T + X/l))
+        fig = plt.figure()
+        ax = Axes3D(fig)
+        ax.plot_wireframe(X, t, Z, rstride=1, cstride=1, cmap=cm.viridis)
         plt.show()
+
 
 
 window.Close()
