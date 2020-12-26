@@ -13,7 +13,7 @@
    <li>Resonance</li>
    <li>Standing Wave <sub>need to define x</sub></li>
    <li>Standing Wave <sub>need to define t</sub></li>
-   <li>...</li>
+   <li>Wave Junction</li>
 
 
 
