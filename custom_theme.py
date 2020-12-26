@@ -33,7 +33,7 @@ Y = []
 
 def addPoint(x1,A):
     A.append(float(x1))
-    #print(x1)
+    ##print(x1)
 for x in np.arange(0, max_t, 0.002):
         addPoint(f(x),Y)
         addPoint(x,X)

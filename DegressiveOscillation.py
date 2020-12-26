@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 def checkP(s):
-    print("run check p")
+    #print("run check p")
     k = 2222222222222222222
     if s.find("p") == 1 or s == "p" :
         s = s.replace("p"," ")
@@ -22,11 +22,11 @@ def checkP(s):
         else:
             k = np.pi
 
-    print(k)
+    #print(k)
     return k
 
 def checkE(s):
-    print("run check e")
+    #print("run check e")
     k = 2222222222222222222
     if s.find("e") == 1 or s == "e":
         s = s.replace("e"," ")
@@ -37,14 +37,14 @@ def checkE(s):
         else:
             k = np.exp(1)
 
-    print(k)
+    #print(k)
     return k
 
 def checkEP(s):
-    print("run check ep")
+    #print("run check ep")
     k = 2222222222222222222
     if (s.find("pe") == 1 or s.find("ep") == 1) :
-        print("in here")
+        #print("in here")
         s = s.replace("e"," ")
         s = s.replace("p"," ")
         if len(s) != 1:
@@ -54,7 +54,7 @@ def checkEP(s):
             k *= np.pi
         else:
             k = np.exp(1)*np.pi
-    print(k)
+    #print(k)
     return k
 
 def check(s):

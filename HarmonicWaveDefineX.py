@@ -41,7 +41,7 @@ def checkE(s):
     return k
 
 def checkEP(s):
-    print("run check ep")
+    ###print("run check ep")
 
     if (s.find("pe") == 1 or s.find("ep") == 1) :
         s = s.replace("e"," ")
