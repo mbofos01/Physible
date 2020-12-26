@@ -17,4 +17,4 @@
 
 
 
-<h6><a href="mailto:mbofos01@ucy.ac.cy &subject=Physible Project">For more info contact me</a></h6>
+<h6><a href="mailto:mbofos01@ucy.ac.cy ,&subject=Physible Project">For more info contact me</a></h6>
