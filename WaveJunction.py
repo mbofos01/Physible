@@ -128,16 +128,16 @@ while True:
                 return r2
         start_t = 0#maxR(r1,r2)/(l*fre)
         print(start_t)
-        t2 = np.arange(0.0, 5, 0.002) #max value
+        t2 = np.arange(0.0, max_t, 0.0002) #max value
         fig = plt.figure()
         plt.Axes.set_frame_on
 
             #####################################
             #define the function you want to draw
         def f(t):
-            if(t.any()<=minR(r1,r2)/(l*fre)):
+            if(t < minR(r1,r2)/(l*fre)):
                 return 0
-            elif (t.any()>= maxR(r1,r2)/l*fre):
+            elif (t >= maxR(r1,r2)/l*fre):
                 return 2 * A * np.cos(2*np.pi*(r1-r2)/(2*l)) * np.sin((2*np.pi*fre*t) - (2*np.pi*(r1-r2))/(2*l))
             else:
                 return A * np.sin(2*np.pi*fre*t - 2*np.pi*minR(r1,r2))
@@ -145,7 +145,16 @@ while True:
                 #####################################
 
         plt.title(name)
-        plt.plot(t2,f(t2))
+        X = []
+        Y = []
+
+        def addPoint(x1,A):
+            A.append(float(x1))
+            #print(x1)
+        for x in np.arange(0, max_t, 0.002):
+                addPoint(f(x),Y)
+                addPoint(x,X)
+        plt.plot(X, Y)
         ax = fig.add_subplot(1, 1, 1)
 
             #####################################
