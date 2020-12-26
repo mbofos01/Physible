@@ -2,7 +2,6 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import math
-from matplotlib import cm
 
 def checkP(s):
     print("run check p")
@@ -78,7 +77,7 @@ else:
 
 layout = [  [sg.Text('Enter A value:               '), sg.InputText()],
             [sg.Text('Enter T value:               '), sg.InputText()],
-            [sg.Text('Enter x value:               '), sg.InputText()],
+            [sg.Text('Enter t value:               '), sg.InputText()],
             [sg.Text('Enter λ value:               '), sg.InputText()],
             [sg.Text('Enter plots name:         '),sg.InputText()],
             [sg.Text('Enter Axis X name:       '), sg.InputText()],
@@ -86,7 +85,7 @@ layout = [  [sg.Text('Enter A value:               '), sg.InputText()],
             [sg.Button('Create Plot')],[sg.Button('Close Window')]
            ]
 # Create the Window
-window = sg.Window('Harmonic Wave define x example', layout).Finalize()
+window = sg.Window('Standing Wave define x example', layout).Finalize()
 #window.Maximize()
 # Event Loop to process "events" and get the "values" of the inputs
 win2_active = False
@@ -106,20 +105,21 @@ while True:
 
         name = values[4]
         A =  check(values[0])
+        print(A)
         T =  check(values[1])
-        x =  check(values[2])
+        t =  check(values[2])
         l =  check(values[3])
         max_t = 2*T
         yAx = values[6]
         xAx = values[5]
-        t2 = np.arange(0.0, max_t, 0.002) #max value
+        t2 = np.arange(0.0, max_t,0.002) #max value
         fig = plt.figure()
         plt.Axes.set_frame_on
 
             #####################################
             #define the function you want to draw
-        def f(t):
-            return A * np.sin(2*np.pi*(t/T + x/l))
+        def f(x):
+            return 2 * A * np.sin((2*np.pi*x)/l) * np.cos((2*np.pi*t)/T)
                 #####################################
 
 
