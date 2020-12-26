@@ -14,7 +14,7 @@
    <li>Standing Wave <sub>need to define x</sub></li>
    <li>Standing Wave <sub>need to define t</sub></li>
    <li>Wave Junction</li>
-
+   </ul>
 
 
 <h6><a href="mailto:mbofos01@ucy.ac.cy?subject=Physible_Project">For more info contact me</a></h6>
