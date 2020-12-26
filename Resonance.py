@@ -87,6 +87,7 @@ layout = [  [sg.Text('Enter plots name:   '), sg.InputText()],
             [sg.Button('Create Plot')],[sg.Button('Close Window')]
            ]
 # Create the Window
+sg.theme("DarkTeal12")
 window = sg.Window('Degressive Oscillation', layout).Finalize()
 #window.Maximize()
 # Event Loop to process "events" and get the "values" of the inputs

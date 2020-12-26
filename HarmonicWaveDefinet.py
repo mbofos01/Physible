@@ -86,7 +86,9 @@ layout = [  [sg.Text('Enter A value:               '), sg.InputText()],
             [sg.Button('Create Plot')],[sg.Button('Close Window')]
            ]
 # Create the Window
+sg.theme("DarkTeal12")
 window = sg.Window('Harmonic Wave define t example', layout).Finalize()
+
 #window.Maximize()
 # Event Loop to process "events" and get the "values" of the inputs
 win2_active = False
