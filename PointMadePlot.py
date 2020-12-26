@@ -86,7 +86,7 @@ layout = [  [sg.Text('Enter plots name:   '), sg.InputText()],
             [sg.Text('Enter Axis X name: '), sg.InputText()],
             [sg.Text('Enter Axis Y name: '), sg.InputText()],
             [sg.Button('Add a Point')],
-            [sg.Button('Create Plot')],[sg.Button('Close Window')]
+            [sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
 # Create the Window
 sg.theme("DarkTeal12")

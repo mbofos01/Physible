@@ -79,7 +79,7 @@ else:
 layout = [  [sg.Text('Enter A value:               '), sg.InputText()],
             [sg.Text('Enter T value:               '), sg.InputText()],
             [sg.Text('Enter λ value:               '), sg.InputText()],
-            [sg.Button('Create Plot')],[sg.Button('Close Window')]
+            [sg.Button('Create Plot') ,sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
 # Create the Window
 sg.theme("DarkTeal12")

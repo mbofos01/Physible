@@ -83,11 +83,11 @@ layout = [  [sg.Text('Enter A value:               '), sg.InputText()],
             [sg.Text('Enter plots name:         '),sg.InputText()],
             [sg.Text('Enter Axis X name:       '), sg.InputText()],
             [sg.Text('Enter Axis Y name:      '), sg.InputText()],
-            [sg.Button('Create Plot')],[sg.Button('Close Window')]
+            [sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
 # Create the Window
 sg.theme("DarkTeal12")
-window = sg.Window('Harmonic Wave define x example', layout).Finalize()
+window = sg.Window('Harmonic Wave define x', layout).Finalize()
 #window.Maximize()
 # Event Loop to process "events" and get the "values" of the inputs
 win2_active = False

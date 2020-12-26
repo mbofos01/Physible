@@ -79,7 +79,7 @@ layout = [  [sg.Text('Enter plots name:         '),sg.InputText()],
             [sg.Text('Enter Axis Y name:      '), sg.InputText()],
             [sg.Text('Enter b value:               '), sg.InputText()],
             [sg.Text('Enter max x-axis value: '), sg.InputText()],
-            [sg.Button('Create Plot')],[sg.Button('Close Window')]
+            [sg.Button('Create Plot') ,sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
 # Create the Window
 sg.theme("DarkTeal12")

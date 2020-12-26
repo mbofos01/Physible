@@ -84,7 +84,7 @@ layout = [  [sg.Text('Enter plots name:   '), sg.InputText()],
             [sg.Text('Enter b1 value:       '), sg.InputText()],
             [sg.Text('Enter b2 value:       '), sg.InputText()],
             [sg.Text('Enter b3 value:       '), sg.InputText()],
-            [sg.Button('Create Plot')],[sg.Button('Close Window')]
+            [sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
 # Create the Window
 sg.theme("DarkTeal12")
