@@ -17,3 +17,4 @@
 
 
 <h6>For more info contact me</h6>
+<a href="mailto:mbofos01@ucy.ac.cy">Send Email</a>
