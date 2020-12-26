@@ -76,21 +76,17 @@ if sys.version_info[0] >= 3:
 else:
     import PySimpleGUI27 as sg
 
-layout = [  [sg.Text('Enter plots name:         '),sg.InputText()],
+layout = [  [sg.Text('Enter A value:               '), sg.InputText()],
+            [sg.Text('Enter T value:               '), sg.InputText()],
+            [sg.Text('Enter t value:               '), sg.InputText()],
+            [sg.Text('Enter λ value:               '), sg.InputText()],
+            [sg.Text('Enter plots name:         '),sg.InputText()],
             [sg.Text('Enter Axis X name:       '), sg.InputText()],
             [sg.Text('Enter Axis Y name:      '), sg.InputText()],
-            [sg.Text('Enter A value:               '), sg.InputText()],
-            [sg.Text('Enter t value:               '), sg.InputText()],
-            [sg.Text('Enter T value:               '), sg.InputText()],
-            [sg.Text('Enter x value:               '), sg.InputText()],
-            [sg.Text('Enter λ value:               '), sg.InputText()],
-            [sg.Text('Enter f value:               '), sg.InputText()],
-            [sg.Text('Enter max x      value: '), sg.InputText()],
-            [sg.Text('Enter max t      value: '), sg.InputText()],
             [sg.Button('Create Plot')],[sg.Button('Close Window')]
            ]
 # Create the Window
-window = sg.Window('Harmonic Wave', layout).Finalize()
+window = sg.Window('Harmonic Wave define t example', layout).Finalize()
 #window.Maximize()
 # Event Loop to process "events" and get the "values" of the inputs
 win2_active = False
@@ -107,19 +103,49 @@ while True:
             [sg.Button('Show'), sg.Button('Exit')]
             ]
 
-        l = 0.6
-        T = 1.5
-        A = 1
-        maxx = 100
-        maxt = 51
-        X = list(np.linspace(0, maxx, maxx))
-        t = list(np.linspace(0, maxt, maxt))
-        X, t = np.meshgrid(X, t)
-        Z = A * np.sin(2*np.pi*(t/T + X/l))
+
+        name = values[4]
+        A =  check(values[0])
+        T =  check(values[1])
+        t =  check(values[2])
+        l =  check(values[3])
+        max_t = 2*l
+        yAx = values[6]
+        xAx = values[5]
+
+        t2 = np.arange(0.0, max_t, 0.002) #max value
         fig = plt.figure()
-        ax = Axes3D(fig)
-        ax.plot_wireframe(X, t, Z, rstride=1, cstride=1, cmap=cm.viridis)
+        plt.Axes.set_frame_on
+
+            #####################################
+            #define the function you want to draw
+        def f(x):
+            return A * np.sin(2*np.pi*(t/T + x/l))
+                #####################################
+
+
+        plt.title(name)
+        plt.plot(t2, f(t2) )
+        ax = fig.add_subplot(1, 1, 1)
+
+            #####################################
+        plt.ylabel(yAx)
+        plt.xlabel(xAx)
+        plt.grid(True)
+        #####################################
+            #spine placement data centered
+        ax.spines['left'].set_position(('data', 0.0))
+        ax.spines['bottom'].set_position(('data', 0.0))
+           # Eliminate upper and right axes
+        ax.spines['right'].set_color('none')
+        ax.spines['top'].set_color('none')
+
+        # Show ticks in the left and lower axes only
+        ax.xaxis.set_ticks_position('bottom')
+        ax.yaxis.set_ticks_position('left')
         plt.show()
+
+
 
 
 
