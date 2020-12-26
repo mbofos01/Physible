@@ -5,7 +5,6 @@ import math
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
 def checkP(s):
-    print("run check p")
     k = 2222222222222222222
     if s.find("p") == 1 or s == "p" :
         s = s.replace("p"," ")
@@ -24,11 +23,10 @@ def checkP(s):
         else:
             k = np.pi
 
-    print(k)
+
     return k
 
 def checkE(s):
-    print("run check e")
     k = 2222222222222222222
     if s.find("e") == 1 or s == "e":
         s = s.replace("e"," ")
@@ -39,14 +37,12 @@ def checkE(s):
         else:
             k = np.exp(1)
 
-    print(k)
+
     return k
 
 def checkEP(s):
-    print("run check ep")
     k = 2222222222222222222
     if (s.find("pe") == 1 or s.find("ep") == 1) :
-        print("in here")
         s = s.replace("e"," ")
         s = s.replace("p"," ")
         if len(s) != 1:
@@ -56,7 +52,7 @@ def checkEP(s):
             k *= np.pi
         else:
             k = np.exp(1)*np.pi
-    print(k)
+
     return k
 
 def check(s):
@@ -76,13 +72,14 @@ if sys.version_info[0] >= 3:
 else:
     import PySimpleGUI27 as sg
 
-layout = [  [sg.Text('Enter A value:               '), sg.InputText()],
-            [sg.Text('Enter T value:               '), sg.InputText()],
-            [sg.Text('Enter t value:               '), sg.InputText()],
-            [sg.Text('Enter λ value:               '), sg.InputText()],
-            [sg.Text('Enter plots name:         '),sg.InputText()],
-            [sg.Text('Enter Axis X name:       '), sg.InputText()],
-            [sg.Text('Enter Axis Y name:      '), sg.InputText()],
+layout = [  [sg.Text('Enter plots name:         '),sg.InputText('Harmonic Wave define t')], #0
+            [sg.Text('Enter Axis X name:       '), sg.InputText('X Axis')],#1
+            [sg.Text('Enter Axis Y name:      '), sg.InputText('Y Axis')],#2
+            [sg.Text('Enter A value:               '), sg.InputText('4')],#3
+            [sg.Text('Enter T value:               '), sg.InputText('1')],#4
+            [sg.Text('Enter t value:               '), sg.InputText('0.2')],#5
+            [sg.Text('Enter λ value:               '), sg.InputText('0.5')],#6
+
             [sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
 # Create the Window
@@ -106,14 +103,14 @@ while True:
             ]
 
 
-        name = values[4]
-        A =  check(values[0])
-        T =  check(values[1])
-        t =  check(values[2])
-        l =  check(values[3])
+        name = values[0]
+        A =  check(values[3])
+        T =  check(values[4])
+        t =  check(values[5])
+        l =  check(values[6])
         max_t = 2*l
-        yAx = values[6]
-        xAx = values[5]
+        yAx = values[2]
+        xAx = values[1]
 
         t2 = np.arange(0.0, max_t, 0.002) #max value
         fig = plt.figure()

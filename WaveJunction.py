@@ -5,7 +5,7 @@ import math
 from matplotlib import cm
 
 def checkP(s):
-    print("run check p")
+    #print("run check p")
     k = 2222222222222222222
     if s.find("p") == 1 or s == "p" :
         s = s.replace("p"," ")
@@ -24,11 +24,11 @@ def checkP(s):
         else:
             k = np.pi
 
-    print(k)
+    #print(k)
     return k
 
 def checkE(s):
-    print("run check e")
+    #print("run check e")
     k = 2222222222222222222
     if s.find("e") == 1 or s == "e":
         s = s.replace("e"," ")
@@ -39,14 +39,14 @@ def checkE(s):
         else:
             k = np.exp(1)
 
-    print(k)
+    #print(k)
     return k
 
 def checkEP(s):
-    print("run check ep")
+    #print("run check ep")
     k = 2222222222222222222
     if (s.find("pe") == 1 or s.find("ep") == 1) :
-        print("in here")
+        #print("in here")
         s = s.replace("e"," ")
         s = s.replace("p"," ")
         if len(s) != 1:
@@ -56,7 +56,7 @@ def checkEP(s):
             k *= np.pi
         else:
             k = np.exp(1)*np.pi
-    print(k)
+    #print(k)
     return k
 
 def check(s):
@@ -127,8 +127,8 @@ while True:
             else:
                 return r2
         start_t = 0#maxR(r1,r2)/(l*fre)
-        print(start_t)
-        t2 = np.arange(0.0, max_t, 0.0002) #max value
+        #print(start_t)
+        t2 = np.arange(0.0, max_t, 0.002) #max value
         fig = plt.figure()
         plt.Axes.set_frame_on
 
@@ -150,7 +150,7 @@ while True:
 
         def addPoint(x1,A):
             A.append(float(x1))
-            #print(x1)
+            ##print(x1)
         for x in np.arange(0, max_t, 0.002):
                 addPoint(f(x),Y)
                 addPoint(x,X)

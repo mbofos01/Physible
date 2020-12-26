@@ -74,11 +74,11 @@ if sys.version_info[0] >= 3:
 else:
     import PySimpleGUI27 as sg
 
-layout = [  [sg.Text('Enter plots name:         '),sg.InputText()],
-            [sg.Text('Enter Axis X name:       '), sg.InputText()],
-            [sg.Text('Enter Axis Y name:      '), sg.InputText()],
-            [sg.Text('Enter b value:               '), sg.InputText()],
-            [sg.Text('Enter max x-axis value: '), sg.InputText()],
+layout = [  [sg.Text('Enter plots name:         '),sg.InputText('Degressive Oscillation')],
+            [sg.Text('Enter Axis X name:       '), sg.InputText('X Axis')],
+            [sg.Text('Enter Axis Y name:      '), sg.InputText('Y Axis')],
+            [sg.Text('Enter b value:               '), sg.InputText('0.4')],
+            [sg.Text('Enter max x-axis value: '), sg.InputText('10')],
             [sg.Button('Create Plot') ,sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
 # Create the Window
