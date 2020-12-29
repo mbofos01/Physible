@@ -74,10 +74,10 @@ else:
 
 layout = [  [sg.Text('Enter plots name:         '),sg.InputText('Harmonic Wave define t')], #0
             [sg.Text('Enter Axis X name:       '), sg.InputText('X Axis')],#1
-            [sg.Text('Enter Axis Y name:      '), sg.InputText('Y Axis')],#2
+            [sg.Text('Enter Axis Y name:       '), sg.InputText('Y Axis')],#2
             [sg.Text('Enter A value:               '), sg.InputText('4')],#3
             [sg.Text('Enter T value:               '), sg.InputText('1')],#4
-            [sg.Text('Enter t value:               '), sg.InputText('0.2')],#5
+            [sg.Text('Enter t value:                '), sg.InputText('0.2')],#5
             [sg.Text('Enter λ value:               '), sg.InputText('0.5')],#6
 
             [sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
