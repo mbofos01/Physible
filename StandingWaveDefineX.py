@@ -108,6 +108,7 @@ while True:
         name = values[0]
         A =  check(values[3])
         #print(A)
+        #print("AS")
         T =  check(values[4])
         x =  check(values[5])
         l =  check(values[6])
