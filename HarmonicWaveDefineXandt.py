@@ -76,7 +76,7 @@ layout = [  [sg.Text('Enter plots name:         '),sg.InputText('Harmonic Wave d
             [sg.Text('Enter A value:               '), sg.InputText('4')],
             [sg.Text('Enter T value:               '), sg.InputText('1')],
             [sg.Text('Enter x value:               '), sg.InputText('2')],
-            [sg.Text('Enter t value:               '), sg.InputText('0.6')],
+            [sg.Text('Enter t value:                '), sg.InputText('0.6')],
             [sg.Text('Enter λ value:               '), sg.InputText('0.5')],
 
             [sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
