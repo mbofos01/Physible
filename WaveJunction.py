@@ -84,7 +84,7 @@ layout = [  [sg.Text('Enter plots name:         '),sg.InputText('Wave Junction')
             [sg.Text('Enter r2 value:              '), sg.InputText('6')],#5
             [sg.Text('Enter λ value:               '), sg.InputText('3')],#6
             [sg.Text('Enter max t value:         '), sg.InputText('5')],#7
-            [sg.Text('Enter f value:               '), sg.InputText('1')],#8
+            [sg.Text('Enter f value:                '), sg.InputText('1')],#8
             [sg.Button('Create Plot') , sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos') ]
            ]
 # Create the Window
