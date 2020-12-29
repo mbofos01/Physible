@@ -93,7 +93,7 @@ window = sg.Window('Standing Wave define x example', layout).Finalize()
 win2_active = False
 while True:
     event, values = window.read()
-    if event in (None, 'Close Window'): # if user closes window or clicks cancel
+    if event in (None, 'Close Window'): # if user closes window or clicks cancel 
         break
 
     if event in (None,'Create Plot'):
