@@ -138,7 +138,7 @@ while True:
         ax.spines['right'].set_color('none')
         ax.spines['top'].set_color('none')
 
-        # Show ticks in the left and lower axes only
+        # Show ticks  in the left and lower axes only
         ax.xaxis.set_ticks_position('bottom')
         ax.yaxis.set_ticks_position('left')
         plt.show()
