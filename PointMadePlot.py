@@ -80,7 +80,7 @@ layout = [  [sg.Text('Enter plots name:   '), sg.InputText('Create Plot with raw
             [sg.Text('Enter Axis Y name: '), sg.InputText('Y Axis')],
             [sg.Button('Add a Point') ,sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
-# Create the Window
+# Create the Window 
 sg.theme("DarkTeal12")
 window = sg.Window('Degressive Oscillation', layout).Finalize()
 #window.Maximize()
