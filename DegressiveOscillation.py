@@ -115,7 +115,7 @@ while True:
         plt.title(values[0])
         plt.plot(t2, f(t2) )
         ax = fig.add_subplot(1, 1, 1)
-
+        aa = 1 
         #####################################
         plt.ylabel(values[2])
         plt.xlabel(values[1])
