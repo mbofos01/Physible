@@ -76,7 +76,7 @@ if sys.version_info[0] >= 3:
 else:
     import PySimpleGUI27 as sg
 
-layout = [  [sg.Text('Enter A value:               '), sg.InputText('4')],
+layout = [  [sg.Text('Enter A value:              '), sg.InputText('4')],
             [sg.Text('Enter T value:               '), sg.InputText('1')],
             [sg.Text('Enter λ value:               '), sg.InputText('0.5')],
             [sg.Button('Create Plot') ,sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
