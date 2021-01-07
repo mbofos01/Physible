@@ -54,6 +54,7 @@ def checkEP(s):
     return k
 
 def check(s):
+
     flag = checkEP(s)
     if flag != 2222222222222222222:
         return flag
@@ -63,6 +64,10 @@ def check(s):
     flag = checkE(s)
     if flag != 2222222222222222222:
         return flag
+
+
+    if s.find(","):
+    	s = s.replace(",",".")
     return float(s)
 
 X = []
@@ -80,7 +85,7 @@ layout = [  [sg.Text('Enter plots name:   '), sg.InputText('Create Plot with raw
             [sg.Text('Enter Axis Y name: '), sg.InputText('Y Axis')],
             [sg.Button('Add a Point') ,sg.Button('Create Plot'),sg.Button('Close Window'),sg.Text('By Michail-Panagiotis Bofos')]
            ]
-# Create the Window 
+# Create the Window
 sg.theme("DarkTeal12")
 window = sg.Window('Degressive Oscillation', layout).Finalize()
 #window.Maximize()

@@ -1,0 +1,1 @@
+pyinstaller --onedir <filename> --icon .\physible.ico --noconsole

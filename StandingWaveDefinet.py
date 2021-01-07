@@ -57,8 +57,9 @@ def checkEP(s):
             k = np.exp(1)*np.pi
     #print(k)
     return k
-
+    
 def check(s):
+
     flag = checkEP(s)
     if flag != 2222222222222222222:
         return flag
@@ -68,6 +69,10 @@ def check(s):
     flag = checkE(s)
     if flag != 2222222222222222222:
         return flag
+
+
+    if s.find(","):
+    	s = s.replace(",",".")
     return float(s)
 
 if sys.version_info[0] >= 3:
@@ -93,7 +98,7 @@ window = sg.Window('Standing Wave define x example', layout).Finalize()
 win2_active = False
 while True:
     event, values = window.read()
-    if event in (None, 'Close Window'): # if user closes window or clicks cancel 
+    if event in (None, 'Close Window'): # if user closes window or clicks cancel
         break
 
     if event in (None,'Create Plot'):

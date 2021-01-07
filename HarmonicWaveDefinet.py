@@ -56,6 +56,7 @@ def checkEP(s):
     return k
 
 def check(s):
+
     flag = checkEP(s)
     if flag != 2222222222222222222:
         return flag
@@ -65,8 +66,12 @@ def check(s):
     flag = checkE(s)
     if flag != 2222222222222222222:
         return flag
-    return float(s)
 
+
+    if s.find(","):
+    	s = s.replace(",",".")
+    return float(s)
+    
 if sys.version_info[0] >= 3:
     import PySimpleGUI as sg
 else:

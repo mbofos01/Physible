@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['DegressiveOscillation.py'],
-             pathex=['C:\\Users\\user\\Desktop\\Physible\\Physible'],
+             pathex=['C:\\Users\\user\\Desktop\\Physible'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False )
+          console=False , icon='physible.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
